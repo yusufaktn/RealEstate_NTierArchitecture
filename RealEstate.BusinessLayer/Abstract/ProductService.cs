@@ -1,0 +1,15 @@
+﻿using RealEstate.EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RealEstate.BusinessLayer.Abstract
+{
+    public interface ProductService:GenericService<TBL_PRODUCT>
+    {
+         List<TBL_PRODUCT> GetTypeProduct(int id);
+        
+    }
+}

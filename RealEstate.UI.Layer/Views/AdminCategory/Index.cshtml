@@ -1,0 +1,114 @@
+﻿@using RealEstate.EntityLayer.Concrete
+@model RealEstate.UI.Layer.ViewModel.RealEstateViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">KATEGORİLER</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            ID
+                        </th>
+                        <th style="width: 20%">
+                            Adı
+                        </th>
+                        <th style="width: 30%">
+                            Detaylar
+                        </th>
+                        <th>
+                            Toplam Ürün
+                        </th>
+                        <th style="width: 8%" class="text-center">
+                            Durum
+                        </th>
+                        <th style="width: 20%">
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (var i in Model.Categories)
+                {
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                @i.CATEGORY_ID
+                            </td>
+                            <td>
+                                <a>
+                                    @i.CATEGORY_NAME
+                                </a>
+                                <br />
+
+                            </td>
+                            <td>
+                                @i.CATEGORY_DETAILS
+                            </td>
+                            <td>
+                            </td>
+
+                            <td class="project-state">
+                                @if (i.CATEGORY_STATUS)
+                                {
+                                    <span class="badge badge-success">Aktif</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger">Pasif</span>
+                                }
+
+                            </td>
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Görünüm
+                                </a>
+                                <a class="btn btn-info btn-sm" href="/AdminCategory/UpdateCategory/@i.CATEGORY_ID">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="/AdminCategory/DeleteCategory/@i.CATEGORY_ID">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Sil
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </div>
+        <br />
+        <button class="btn btn-success" onclick="window.location.href='/AdminCategory/AddCategory'">
+            Yeni Kategori Ekle
+        </button>
+        
+        
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+
+

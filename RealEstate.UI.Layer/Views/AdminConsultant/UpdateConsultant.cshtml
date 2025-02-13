@@ -1,0 +1,64 @@
+﻿@model RealEstate.EntityLayer.Concrete.TBL_REALESTATE_CONSULTANT
+
+@{
+    ViewBag.Title = "UpdateConsultant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<section class="content">
+
+    @using (Html.BeginForm("UpdateConsultant", "AdminConsultant", FormMethod.Post))
+    {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="inputName">Adı</label>
+                @Html.TextBoxFor(x => x.NAME, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.NAME, "", new { style = "color:red;" })
+
+
+                <label for="inputDescription">Soyadı</label>
+                @Html.TextBoxFor(x => x.SURNAME, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.SURNAME, "", new { style = "color:red;" })
+
+
+
+                <label for="inputStatus">Telefon</label>
+                @Html.TextBoxFor(x => x.PHONE, new { @class = "form-control", @type = "tel" })
+                @Html.ValidationMessageFor(x => x.PHONE, "", new { style = "color:red;" })
+
+
+
+                <label for="inputStatus">E-Mail</label>
+                @Html.TextBoxFor(x => x.EMAIL, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.EMAIL, "", new { style = "color:red;" })
+
+
+                <label for="inputStatus">Hakkında</label>
+                @Html.TextAreaFor(x => x.DETAIL, new { @class = "form-control", @row = "4" })
+                @Html.ValidationMessageFor(x => x.DETAIL, "", new { style = "color:red;" })
+
+
+                <label for="inputStatus">Uzmanlık</label>
+                @Html.TextBoxFor(x => x.SPECIALIZATION, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.SPECIALIZATION, "", new { style = "color:red;" })
+
+
+                <label for="inputStatus">Fotoğraf</label>
+                @Html.TextBoxFor(x => x.IMAGE, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.IMAGE, "", new { style = "color:red;" })
+
+            </div>
+
+            <button class="btn btn-success">
+                Kaydet
+            </button>
+
+        </div>
+
+    }
+    @Html.HiddenFor(x => x.ID)
+
+
+</section>

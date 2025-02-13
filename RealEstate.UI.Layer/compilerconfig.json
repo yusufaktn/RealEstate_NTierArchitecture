@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "Content/sass/style.css",
+    "inputFile": "Content/sass/style.scss"
+  },
+  {
+    "outputFile": "Content/sass/bootstrap.css",
+    "inputFile": "Content/sass/bootstrap.scss"
+  },
+  {
+    "outputFile": "Content/sass/_bootstrap-sprockets.css",
+    "inputFile": "Content/sass/_bootstrap-sprockets.scss"
+  },
+  {
+    "outputFile": "Content/sass/_bootstrap-mincer.css",
+    "inputFile": "Content/sass/_bootstrap-mincer.scss"
+  },
+  {
+    "outputFile": "Content/sass/_bootstrap-compass.css",
+    "inputFile": "Content/sass/_bootstrap-compass.scss"
+  }
+]

@@ -1,0 +1,91 @@
+﻿@using RealEstate.EntityLayer.Concrete
+
+@model RealEstate.UI.Layer.ViewModel.RealEstateViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="fh5co-page-title" style="background-image: url(images/slide_6.jpg);">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 animate-box">
+                <h1><span class="colored">Gayrimenkul</span> Satın Al</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="best-deal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
+                <h2>En iyi gayrimenkul fırsatlarını sunuyoruz.</h2>
+                <p>Geniş gayrimenkul yelpazemizle her ihtiyaca uygun çözümler sunuyoruz. Konut, ticari, arsa ve daha fazlası için en iyi fırsatları kaçırmayın. </p>
+            </div>
+
+
+            @foreach (var i in Model.Products)
+            {
+                <div class="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                    <div class="fh5co-property">
+                        <figure>
+                            <img src="~/Content/images/@i.PRODUCT_IMAGE" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+                            <a href="#" class="tag">@i.TBL_TYPE.TYPE_NAME</a>
+                        </figure>
+                        <div class="fh5co-property-innter">
+                            <h3><a href="#">@i.PRODUCT_TITLE</a></h3>
+                            <div class="price-status">
+                                <span class="price">@i.PRODUCT_PRICE </span>
+                            </div>
+                            <p>@i.PRODUCT_DESCRIPTION</p>
+                        </div>
+                        <p class="fh5co-property-specification">
+
+                            @foreach (var j in Model.Product_Features)
+                            {
+                                if (j.PRODUCT_ID == i.PRODUCT_ID)
+                                {
+                                    <span><strong>@j.QUANTITIY</strong> @j.TBL_FEATURE.FEATURE_NAME</span>
+                                }
+                            }
+
+
+                        </p>
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center animate-box" data-animate-effect="fadeIn">
+                <nav>
+                    <ul class="pagination">
+                        <li class="disabled">
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

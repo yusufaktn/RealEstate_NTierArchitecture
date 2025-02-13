@@ -1,0 +1,241 @@
+﻿@using RealEstate.EntityLayer.Concrete
+@model  RealEstate.UI.Layer.ViewModel.RealEstateViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Slider kısmı  -->
+
+<aside id="fh5co-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            @if (Model.Sliders != null)
+            {
+
+                foreach (var i in Model.Sliders)
+                {
+                    <li style="background-image: url('../../Content/images/@i.TBL_PRODUCT.PRODUCT_IMAGE'); ">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
+                                <div class="fh5co-property-brief-inner">
+                                    <div class="fh5co-box">
+                                        <h3><a href="#">@i.TBL_PRODUCT.PRODUCT_TITLE</a></h3>
+                                        <div class="price-status">
+                                            <span class="price">@i.TBL_PRODUCT.PRODUCT_PRICE.ToString("C",new System.Globalization.CultureInfo("tr-TR")) <a href="#" class="tag">@i.TBL_PRODUCT.TBL_TYPE.TYPE_NAME</a></span>
+                                        </div>
+                                        <p>@i.TBL_PRODUCT.PRODUCT_DESCRIPTION</p>
+                                        <p class="fh5co-property-specification">
+                                            <span><strong>@i.TBL_PRODUCT.PRODUCT_SIZE</strong> m²</span>
+                                            @foreach (var j in Model.Product_Features)
+                                            {
+                                                if (j.PRODUCT_ID == i.PRODUCT_ID)
+                                                {
+                                                    <span><strong>@j.QUANTITIY</strong> @j.TBL_FEATURE.FEATURE_NAME</span>
+                                                }
+
+                                            }
+
+                                        </p>
+                                        <p><a href="#" class="btn btn-primary">Daha Fazla Bilgi</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</aside>
+
+<!-- İlanlar/Fırsatlar kısmı  -->
+<div id="best-deal">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
+                <h2>En İyi Gayrimenkul Fırsatlarını Sunuyoruz</h2>
+                <p>Uzak diyarlarda, kelime dağlarının ardında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar. </p>
+            </div>
+
+            @foreach (var i in Model.Opportunity)
+            {
+                <div class="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                    <div class="fh5co-property">
+                        <figure>
+                            <img src="~/Content/images/@i.TBL_PRODUCT.PRODUCT_IMAGE" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+                            <a href="#" class="tag">@i.TBL_PRODUCT.TBL_TYPE.TYPE_NAME</a>
+                        </figure>
+                        <div class="fh5co-property-innter">
+                            <h3><a href="#">@i.TBL_PRODUCT.PRODUCT_TITLE</a></h3>
+                            <div class="price-status">
+                                <span class="price">@i.TBL_PRODUCT.PRODUCT_PRICE.ToString("C", new System.Globalization.CultureInfo("tr-TR"))</span>
+                            </div>
+                            <p>@i.TBL_PRODUCT.PRODUCT_DESCRIPTION</p>
+                        </div>
+                        <p class="fh5co-property-specification">
+                            @foreach (var j in Model.Product_Features)
+                            {
+                                if (j.PRODUCT_ID == i.PRODUCT_ID)
+                                {
+                                    <span><strong>@j.QUANTITIY</strong> @j.TBL_FEATURE.FEATURE_NAME</span>
+                                }
+                            }
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hakkımızda kısmı  -->
+<div class="fh5co-section-with-image">
+    <img src="~/Content/images/image_1.jpg" />
+    <div class="fh5co-box animate-box">
+        <h2>Güvenlik, Konfor, &amp; Kolaylık</h2>
+        <p>Modern yaşamın gereksinimlerini karşılayan güvenli, konforlu ve kolay erişilebilir gayrimenkul seçenekleri sunuyoruz.</p>
+        <p><a href="#" class="btn btn-primary btn-outline with-arrow">Başlayın <i class="icon-arrow-right"></i></a></p>
+    </div>
+</div>
+
+<!--Müşteri memnuniyetleri kısmı-->
+<div id="fh5co-testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
+                <h2>Müşteri Memnuniyetleri</h2>
+                <p>Müşterilerimizin deneyimleri, başarımızın temelini oluşturur.</p>
+            </div>
+            @foreach (var i in Model.Comments)
+            {
+                <div class="col-md-4 text-center item-block animate-box" data-animate-effect="fadeIn">
+                    <blockquote>
+                        <p>&ldquo;@i.COMMENT_DESCRIPTION.&rdquo;</p>
+                        <p><span class="fh5co-author"><cite>@i.TBL_CUSTOMER.CUSTOMER_NAME</cite></span></p>
+                    </blockquote>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div id="fh5co-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading white animate-box" data-animate-effect="fadeIn">
+                <h2>Güvenilir Emlak Danışmanlarımız</h2>
+                <p>Müşterilerimize en iyi hizmeti sunan deneyimli ve uzman kadromuzla tanışın.</p>
+            </div>
+            <div class="col-md-4 text-center item-block animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-agent">
+                    <figure>
+                        <img src="~/Content/images/woman.png" alt="Ayşe Yılmaz">
+                    </figure>
+                    <h3>Ayşe Yılmaz</h3>
+                    <p>Konut ve ticari gayrimenkul alanlarında uzman, bölgeyi iyi tanıyan ve müşteri odaklı bir danışman.</p>
+                    <p><a href="mailto:ayse.yilmaz@email.com" class="btn btn-primary btn-outline">İletişime Geç</a></p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center item-block animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-agent">
+                    <figure>
+                        <img src="~/Content/images/man.jpg" alt="Mehmet Demir">
+                    </figure>
+                    <h3>Mehmet Demir</h3>
+                    <p>Yatırım gayrimenkulleri konusunda deneyimli, portföy yönetimi ve finansal analiz konularında uzman.</p>
+                    <p><a href="mailto:mehmet.demir@email.com" class="btn btn-primary btn-outline">İletişime Geç</a></p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center item-block animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-agent">
+                    <figure>
+                        <img src="~/Content/images/woman 2.png" alt="Elif Kaya">
+                    </figure>
+                    <h3>Elif Kaya</h3>
+                    <p>Kiralama ve emlak yönetimi konusunda uzman, müşteri memnuniyetine odaklı bir danışman.</p>
+                    <p><a href="mailto:elif.kaya@email.com" class="btn btn-primary btn-outline">İletişime Geç</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog kısmı  -->
+<div id="fh5co-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
+                <h2>En Son Blog Yazılarımız</h2>
+                <p>Gayrimenkul sektörüyle ilgili en güncel haberler, ipuçları ve analizler.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 animate-box" data-animate-effect="fadeIn">
+                <a class="fh5co-entry" href="#">
+                    <figure>
+                        <img src="~/Content/images/trend_estate.jpg" alt="Emlak Piyasasındaki Son Trendler" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-copy">
+                        <h3>Emlak Piyasasındaki Son Trendler</h3>
+                        <span class="fh5co-date">26 Ekim 2023</span>
+                        <p>Son aylarda emlak piyasasında gözlenen hareketlilik ve geleceğe yönelik beklentiler hakkında detaylı bir analiz.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 animate-box" data-animate-effect="fadeIn">
+                <a class="fh5co-entry" href="#">
+                    <figure>
+                        <img src="~/Content/images/buy_a_home.png" alt="Ev Satın Alırken Dikkat Edilmesi Gerekenler" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-copy">
+                        <h3>Ev Satın Alırken Dikkat Edilmesi Gerekenler</h3>
+                        <span class="fh5co-date">19 Ekim 2023</span>
+                        <p>Ev satın alırken nelere dikkat etmeniz gerektiği, bütçe planlamasından lokasyon seçimine kadar önemli ipuçları.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 animate-box" data-animate-effect="fadeIn">
+                <a class="fh5co-entry" href="#">
+                    <figure>
+                        <img src="~/Content/images/investment.png" alt="Yatırım İçin En Karlı Bölgeler" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-copy">
+                        <h3>Yatırım İçin En Karlı Bölgeler</h3>
+                        <span class="fh5co-date">12 Ekim 2023</span>
+                        <p>Gayrimenkul yatırımı yapmak isteyenler için yükselişte olan ve gelecekte değer kazanması beklenen bölgeler.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-12 text-center animate-box" data-animate-effect="fadeIn">
+                <p><a href="#" class="btn btn-primary btn-outline with-arrow">Daha Fazla Göster <i class="icon-arrow-right"></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- İletişim formu kısmı   -->
+<div class="fh5co-cta" style="background-image: url(images/cta_background.jpg);">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="col-md-12 text-center animate-box" data-animate-effect="fadeIn">
+            <h3>Hayallerinizdeki Evi Bulun</h3>
+            <p>En güncel emlak ilanlarımıza göz atın ve uzman danışmanlarımızla iletişime geçin.</p>
+            <p><a href="#" class="btn btn-primary btn-outline with-arrow">İlanlara Göz At <i class="icon-arrow-right"></i></a></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
