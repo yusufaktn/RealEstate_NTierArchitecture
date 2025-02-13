@@ -30,6 +30,8 @@ namespace RealEstate.UI.Layer.Controllers.Admin
         [HttpGet]
         public ActionResult AddCategory()
         {
+            
+
             return View();
         }
 

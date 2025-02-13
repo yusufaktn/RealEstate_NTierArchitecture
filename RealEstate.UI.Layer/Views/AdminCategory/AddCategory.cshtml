@@ -27,8 +27,12 @@
 
             <div class="form-group">
                 <label for="inputStatus">Durum</label>
-                <input type="text" name="CATEGORY_STATUS" class="form-control">
-                @Html.ValidationMessageFor(x=>x.CATEGORY_STATUS,"", new {style="color:red;"})
+                <select name="CATEGORY_STATUS" class="form-control">
+                    <option value="">Seçiniz</option>
+                    <option value="True">Aktif</option>
+                    <option value="False">Pasif</option>
+                </select>
+                @Html.ValidationMessageFor(x => x.CATEGORY_STATUS, "", new { style = "color:red;" })
             </div>
 
             <button class="btn btn-success">

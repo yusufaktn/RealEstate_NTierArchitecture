@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate.DataAccessLayer.Abstract
 {
-    internal interface ICustomerDAL:IGenericDAL<TBL_CUSTOMER>
+    public interface ICustomerDAL:IGenericDAL<TBL_CUSTOMER>
     {
     }
 }

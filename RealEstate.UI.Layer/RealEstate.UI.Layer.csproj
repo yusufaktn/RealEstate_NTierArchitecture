@@ -139,6 +139,7 @@
     <Compile Include="Controllers\Admin\AdminCategoryController.cs" />
     <Compile Include="Controllers\Admin\AdminConsultantController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminCustomerController.cs" />
     <Compile Include="Controllers\BuyController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -2579,6 +2580,7 @@
     <Content Include="Views\AdminConsultant\Index.cshtml" />
     <Content Include="Views\AdminConsultant\AddConsultant.cshtml" />
     <Content Include="Views\AdminConsultant\UpdateConsultant.cshtml" />
+    <Content Include="Views\AdminCustomer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

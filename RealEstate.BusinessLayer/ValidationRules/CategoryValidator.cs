@@ -19,7 +19,7 @@ namespace RealEstate.BusinessLayer.ValidationRules
             RuleFor(x => x.CATEGORY_DETAILS).NotEmpty().WithMessage("Kategori Detayları Boş Geçilemez!!");
             RuleFor(x => x.CATEGORY_DETAILS).MaximumLength(150).WithMessage("Kategori Adı En Fazla 150 Karakter Olmalıdır");
             RuleFor(x => x.CATEGORY_DETAILS).MinimumLength(10).WithMessage("Kategori Adı En Az 10 Karakter Olmalıdır");
-            RuleFor(x => x.CATEGORY_STATUS).NotEmpty().WithMessage("Kategori Durum Boş Geçilemez");
+            
 
 
         }

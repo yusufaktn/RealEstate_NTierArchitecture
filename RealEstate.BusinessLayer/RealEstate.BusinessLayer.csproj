@@ -75,6 +75,7 @@
     <Compile Include="Concrate\CommentManager.cs" />
     <Compile Include="Concrate\ConsultantManager.cs" />
     <Compile Include="Concrate\ContactManager.cs" />
+    <Compile Include="Concrate\CustomerManager.cs" />
     <Compile Include="Concrate\FeatureManager.cs" />
     <Compile Include="Concrate\OpportunityManager.cs" />
     <Compile Include="Concrate\ProductManager.cs" />

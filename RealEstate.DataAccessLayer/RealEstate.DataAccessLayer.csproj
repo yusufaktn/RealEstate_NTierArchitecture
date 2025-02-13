@@ -77,6 +77,7 @@
     <Compile Include="EntitiyFramework\EfCommentDAL.cs" />
     <Compile Include="EntitiyFramework\EfConsultantDAL.cs" />
     <Compile Include="EntitiyFramework\EfContactDAL.cs" />
+    <Compile Include="EntitiyFramework\EfCustomerDAL.cs" />
     <Compile Include="EntitiyFramework\EfFeatureDAL.cs" />
     <Compile Include="EntitiyFramework\EfOpportunityDAL.cs" />
     <Compile Include="EntitiyFramework\EfProductDAL.cs" />
