@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
     <Compile Include="ValidationRules\ConsultantValidator.cs" />
+    <Compile Include="ValidationRules\CustomerValidation.cs" />
     <Compile Include="ValidationRules\ProductValidatior.cs" />
   </ItemGroup>
   <ItemGroup>

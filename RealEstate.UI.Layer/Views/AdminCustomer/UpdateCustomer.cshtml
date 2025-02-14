@@ -1,0 +1,52 @@
+﻿@model RealEstate.EntityLayer.Concrete.TBL_CUSTOMER
+
+@{
+    ViewBag.Title = "UpdateCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<section class="content">
+
+    @using (Html.BeginForm("UpdateCustomer", "AdminCustomer", FormMethod.Post))
+    {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="inputName">Adı</label>
+                @Html.TextBoxFor(x => x.CUSTOMER_NAME, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CUSTOMER_NAME, "", new { style = "color:red;" })
+
+
+                <label for="inputDescription">Soyadı</label>
+                @Html.TextBoxFor(x => x.CUSTOMER_SURNAME, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CUSTOMER_SURNAME, "", new { style = "color:red;" })
+
+
+
+                <label for="inputStatus">Telefon</label>
+                @Html.TextBoxFor(x => x.CUSTOMER_PHONE, new { @class = "form-control", @type = "tel" })
+                @Html.ValidationMessageFor(x => x.CUSTOMER_PHONE, "", new { style = "color:red;" })
+
+
+
+                <label for="inputStatus">E-Mail</label>
+                @Html.TextBoxFor(x => x.CUSTOMER_MAIL, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CUSTOMER_MAIL, "", new { style = "color:red;" })
+
+
+                
+
+            </div>
+
+            <button class="btn btn-success">
+                Kaydet
+            </button>
+
+        </div>
+
+    }
+    @Html.HiddenFor(x => x.CUSTOMER_ID)
+
+
+</section>

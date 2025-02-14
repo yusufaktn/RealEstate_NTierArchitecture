@@ -20,27 +20,27 @@ namespace RealEstate.BusinessLayer.Concrate
 
         public void Delete(TBL_CUSTOMER t)
         {
-            throw new NotImplementedException();
+            _customerDaL.Delete(t);
         }
 
         public TBL_CUSTOMER GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _customerDaL.GetByID(x=>x.CUSTOMER_ID==id);
         }
 
         public List<TBL_CUSTOMER> GetList()
         {
-            return _customerDaL.GetList();
+           return _customerDaL.GetList();
         }
 
         public void Insert(TBL_CUSTOMER t)
         {
-            throw new NotImplementedException();
+           _customerDaL.Insert(t);
         }
 
         public void Update(TBL_CUSTOMER t)
         {
-            throw new NotImplementedException();
+            _customerDaL.Update(t);
         }
     }
 }

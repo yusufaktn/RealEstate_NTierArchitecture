@@ -2581,6 +2581,8 @@
     <Content Include="Views\AdminConsultant\AddConsultant.cshtml" />
     <Content Include="Views\AdminConsultant\UpdateConsultant.cshtml" />
     <Content Include="Views\AdminCustomer\Index.cshtml" />
+    <Content Include="Views\AdminCustomer\AddCustomer.cshtml" />
+    <Content Include="Views\AdminCustomer\UpdateCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
