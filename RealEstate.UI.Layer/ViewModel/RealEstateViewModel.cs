@@ -20,6 +20,10 @@ namespace RealEstate.UI.Layer.ViewModel
         public List<TBL_CUSTOMER> Customers { get; set; }
         public List<TBL_OPPORTUNITY> Opportunity { get; set; }
         public List<TBL_REALESTATE_CONSULTANT> Consultant { get; set; }
+       
+        //ID ye göre sonuç almak istediğimde aşağıdakileri kullanıyorum çünkü List türünde bir değere ihtiyacım olmuyor.
+        //Ayrıca List olarak çağırdığımda döngü olmadan tabloların değerlerine ulaşamıyorum.
+        public TBL_REALESTATE_CONSULTANT Consultant_GetID { get; set; }
 
 
 

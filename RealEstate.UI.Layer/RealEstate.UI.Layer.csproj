@@ -2583,6 +2583,7 @@
     <Content Include="Views\AdminCustomer\Index.cshtml" />
     <Content Include="Views\AdminCustomer\AddCustomer.cshtml" />
     <Content Include="Views\AdminCustomer\UpdateCustomer.cshtml" />
+    <Content Include="Views\AdminConsultant\GetProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

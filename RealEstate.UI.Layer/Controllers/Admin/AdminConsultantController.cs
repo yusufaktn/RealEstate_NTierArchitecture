@@ -55,12 +55,14 @@ namespace RealEstate.UI.Layer.Controllers.Admin
 
         }
 
+
         [HttpGet]
         public ActionResult UpdateConsultant(int id)
         {
             var consultant = consultantManager.GetByID(id);
             return View(consultant);
         }
+
 
         [HttpPost]
         public ActionResult UpdateConsultant(TBL_REALESTATE_CONSULTANT p)
@@ -81,10 +83,22 @@ namespace RealEstate.UI.Layer.Controllers.Admin
                 }
 
             }
-
             return View();
         }
 
+
+
+        public ActionResult GetProfile(int id)
+        {
+
+            var getprofile = new RealEstateViewModel
+            {
+                Consultant_GetID = consultantManager.GetByID(id)
+            }; 
+
+            return View(getprofile);
+
+        }
 
 
 

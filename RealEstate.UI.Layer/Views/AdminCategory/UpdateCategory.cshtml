@@ -11,8 +11,6 @@
 
     @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Post))
     {
-
-
         <div class="card-body">
             <div class="form-group">
                 <label for="inputName">Kategori Adı</label>
@@ -33,7 +31,6 @@
                 @Html.ValidationMessageFor(x => x.CATEGORY_STATUS, "", new { style = "color:red;" })
                 @*Bu kısımda dropdownlist olması gerekiyor*@
             </div>
-
             <button class="btn btn-success">
                 Güncelle
             </button>

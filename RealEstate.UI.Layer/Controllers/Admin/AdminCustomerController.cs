@@ -15,7 +15,7 @@ namespace RealEstate.UI.Layer.Controllers.Admin
     public class AdminCustomerController : Controller
     {
         CustomerManager cm = new CustomerManager(new EfCustomerDAL());
-        // GET: AdminCustomer
+      
         public ActionResult Index()
         {
             var customer = new RealEstateViewModel
@@ -53,18 +53,19 @@ namespace RealEstate.UI.Layer.Controllers.Admin
                 }
 
             }
-
             return View();
 
         }
 
 
+
         [HttpGet]
         public ActionResult UpdateCustomer(int id)
         {
-            var consultant = cm.GetByID(id);
-            return View(consultant);
+            var customer = cm.GetByID(id);
+            return View(customer);
         }
+
 
         [HttpPost]
         public ActionResult UpdateCustomer(TBL_CUSTOMER p)
@@ -89,7 +90,12 @@ namespace RealEstate.UI.Layer.Controllers.Admin
             return View();
         }
 
-
+        public ActionResult DeleteCustomer(int id)
+        {
+            var customer = cm.GetByID(id);
+            cm.Delete(customer);
+            return RedirectToAction("Index");
+        }
 
 
 

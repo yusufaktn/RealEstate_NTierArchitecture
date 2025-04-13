@@ -35,7 +35,7 @@
                 @Html.ValidationMessageFor(x => x.CUSTOMER_MAIL, "", new { style = "color:red;" })
 
 
-                
+
 
             </div>
 
@@ -44,9 +44,9 @@
             </button>
 
         </div>
-
+        @Html.HiddenFor(x => x.CUSTOMER_ID)
     }
-    @Html.HiddenFor(x => x.CUSTOMER_ID)
+
 
 
 </section>
